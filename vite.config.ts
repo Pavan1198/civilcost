@@ -3,6 +3,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
+const repoBasePath = "/civilcost/";
+
 function parsePort(value: string | undefined, fallback: number) {
   const port = Number(value);
   return Number.isFinite(port) && port > 0 ? port : fallback;
@@ -10,9 +12,12 @@ function parsePort(value: string | undefined, fallback: number) {
 
 const devPort = parsePort(process.env.PORT, 5173);
 const previewPort = parsePort(process.env.PORT, 4173);
+const basePath =
+  process.env.BASE_PATH ??
+  (process.env.NODE_ENV === "production" ? repoBasePath : "/");
 
 export default defineConfig({
-  base: process.env.BASE_PATH ?? "/",
+  base: basePath,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
