@@ -170,7 +170,7 @@ export default function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="absolute right-4 top-1/2 z-30 w-[calc(100%-2rem)] max-w-[220px] rounded-2xl border border-slate-100 bg-white p-4 shadow-xl sm:w-auto sm:max-w-none lg:right-0 xl:-right-8"
+              className="absolute right-4 top-1/4 z-30 w-[calc(100%-2rem)] max-w-[220px] rounded-2xl border border-slate-100 bg-white p-4 shadow-xl sm:w-auto sm:max-w-none lg:right-0 xl:-right-4"
             >
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="text-green-500" size={24} />
