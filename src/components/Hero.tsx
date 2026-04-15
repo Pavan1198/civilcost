@@ -86,7 +86,7 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              <p>Trusted by 2,000+ homeowners in Bangalore and Mumbai</p>
+              <p>Trusted by 2,000+ homeowners in Thane and Mumbai</p>
             </div>
           </motion.div>
 

@@ -12,8 +12,8 @@ import {
 const stats = [
   {
     icon: <HardHat size={22} />,
-    value: "30+",
-    label: "Verified Contractors",
+    value: "30+ Years",
+    label: "Experienced Contractors",
     sub: "Across major cities",
   },
   {
