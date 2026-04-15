@@ -82,11 +82,11 @@ export default function Hero() {
                 {[1, 2, 3].map((index) => (
                   <div
                     key={index}
-                    className="h-8 w-8 rounded-full border-2 border-white bg-slate-200"
+                    className="h-8 w-8 rounded-full border-2 border-whitgit e bg-slate-200"
                   />
                 ))}
               </div>
-              <p>Trusted by 2,000+ homeowners in Thane and Mumbai</p>
+              <p>Trusted by 2,000+ homeowners in Bangalore and Mumbai</p>
             </div>
           </motion.div>
 
