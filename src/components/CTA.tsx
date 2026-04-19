@@ -4,17 +4,15 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 
 export default function CTA() {
-  const { isLoggedIn, openSignup } = useAuth();
+  const { isLoggedIn, openAnalyzer, openSignup } = useAuth();
 
   const handlePrimaryAction = () => {
     if (isLoggedIn) {
-      document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
+      openAnalyzer();
       return;
     }
 
-    openSignup(() => {
-      document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
-    });
+    openSignup(() => openAnalyzer());
   };
 
   return (

@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import AuthModal from "@/components/AuthModal";
+import QuoteAnalyzerModal from "@/components/QuoteAnalyzerModal";
 import { AuthProvider } from "@/context/AuthContext";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ function App() {
             <Router />
           </WouterRouter>
           <AuthModal />
+          <QuoteAnalyzerModal />
           <Toaster />
         </AuthProvider>
       </TooltipProvider>

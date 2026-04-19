@@ -167,17 +167,15 @@ function PricingCard({
 }
 
 export default function Pricing() {
-  const { isLoggedIn, openSignup } = useAuth();
+  const { isLoggedIn, openAnalyzer, openSignup } = useAuth();
 
   const handleAction = () => {
     if (isLoggedIn) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      openAnalyzer();
       return;
     }
 
-    openSignup(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    openSignup(() => openAnalyzer());
   };
 
   return (

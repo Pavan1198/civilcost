@@ -8,7 +8,8 @@ import { useAuth } from "@/context/AuthContext";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const { isLoggedIn, user, openLogin, openSignup, logout } = useAuth();
+  const { isLoggedIn, user, openAnalyzer, openLogin, openSignup, logout } =
+    useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,7 +104,7 @@ export default function Navbar() {
               </div>
 
               <Button
-                onClick={scrollToPricing}
+                onClick={openAnalyzer}
                 className="rounded-full bg-slate-900 px-5 text-sm font-semibold text-white shadow-md transition-all hover:bg-slate-800 hover:shadow-lg"
               >
                 Analyze Quote

@@ -15,11 +15,14 @@ interface AuthContextType {
   isLoggedIn: boolean;
   authModalOpen: boolean;
   authMode: AuthMode;
+  analyzerOpen: boolean;
   openLogin: (onSuccess?: () => void) => void;
   openSignup: (onSuccess?: () => void) => void;
   closeAuth: () => void;
   login: (user: User) => void;
   logout: () => void;
+  openAnalyzer: () => void;
+  closeAnalyzer: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -32,6 +35,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<AuthMode>("login");
+  const [analyzerOpen, setAnalyzerOpen] = useState(false);
   const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
 
   const openLogin = (onSuccess?: () => void) => {
@@ -61,6 +65,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = () => {
     setUser(null);
+    setAnalyzerOpen(false);
+  };
+
+  const openAnalyzer = () => {
+    setAnalyzerOpen(true);
+  };
+
+  const closeAnalyzer = () => {
+    setAnalyzerOpen(false);
   };
 
   return (
@@ -70,11 +83,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         isLoggedIn: !!user,
         authModalOpen,
         authMode,
+        analyzerOpen,
         openLogin,
         openSignup,
         closeAuth,
         login,
         logout,
+        openAnalyzer,
+        closeAnalyzer,
       }}
     >
       {children}
