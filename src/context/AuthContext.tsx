@@ -69,6 +69,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const openAnalyzer = () => {
+    if (!user) {
+      setAuthMode("login");
+      setPendingAction(() => () => setAnalyzerOpen(true));
+      setAuthModalOpen(true);
+      return;
+    }
+
     setAnalyzerOpen(true);
   };
 

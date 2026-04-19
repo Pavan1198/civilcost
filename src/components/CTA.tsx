@@ -4,15 +4,10 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 
 export default function CTA() {
-  const { isLoggedIn, openAnalyzer, openSignup } = useAuth();
+  const { isLoggedIn, openAnalyzer } = useAuth();
 
   const handlePrimaryAction = () => {
-    if (isLoggedIn) {
-      openAnalyzer();
-      return;
-    }
-
-    openSignup(() => openAnalyzer());
+    openAnalyzer();
   };
 
   return (
